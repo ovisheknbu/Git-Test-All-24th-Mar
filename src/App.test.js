@@ -7,7 +7,7 @@ import App from './App';
 //   const linkElement = screen.getByText(/learn react/i);
 //   expect(linkElement).toBeInTheDocument();
 // });
-
+//
 test('INPUTS SHOULD BE INITIALLY EMPTY', () => {
   render(<App />);
   const emailInputElement = screen.getByRole("textbox");
