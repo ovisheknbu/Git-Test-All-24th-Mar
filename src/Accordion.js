@@ -7,7 +7,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { Label } from '@mui/icons-material';
 
 const AccordionComp = () => {
-
+const [counter1, setCounter1] = useState({})
   const [simulationData, setSimulationData] = useState({
     //dmId: '1',
     demographic: [
