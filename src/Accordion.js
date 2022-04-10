@@ -11,18 +11,18 @@ const AccordionComp = () => {
   const [simulationData, setSimulationData] = useState({
     //dmId: '1',
     demographic: [
-      {
-        fieldId: "First Name",
-        fieldName: "fName",
-        mockData: "f name",
-        emma_field_name: "emma fieldname",
-      },
-      {
-        fieldId: "Last Name",
-        fieldName: "lName",
-        mockData: "l name",
-        emma_field_name: "",
-      }
+      // {
+      //   fieldId: "First Name",
+      //   fieldName: "fName",
+      //   mockData: "f name",
+      //   emma_field_name: "emma fieldname",
+      // },
+      // {
+      //   fieldId: "Last Name",
+      //   fieldName: "lName",
+      //   mockData: "l name",
+      //   emma_field_name: "",
+      // }
     ],
     provider: [
       {
@@ -54,37 +54,40 @@ const AccordionComp = () => {
     <div>
       {
         Object.keys(simulationData).map((keyHeader) => {
-          return (
-            <Accordion key={keyHeader}>
-              <AccordionSummary
-                expandIcon={<ExpandMoreIcon />}
-                aria-controls="panel1a-content"
-                id="panel1a-header"
-              >
-                <Typography>{keyHeader}</Typography>
-              </AccordionSummary>
-              <AccordionDetails>
-                {
-                  simulationData[keyHeader].map((row, i) => {
-                   
-                    return (
-                      <Typography key={i}>
-                       
-                          {row.fieldId} : 
-                       
-                        <input
-                            type="text"
-                            value={row.mockData}
-                            onChange={(e)=>{onChangeText(keyHeader, i, e)}}
-                        />
-                      </Typography>
-                    )
-                  })
-                }
-
-              </AccordionDetails>
-            </Accordion>
-          )
+          if(simulationData[keyHeader].length> 0){
+            return (
+              <Accordion key={keyHeader}>
+                <AccordionSummary
+                  expandIcon={<ExpandMoreIcon />}
+                  aria-controls="panel1a-content"
+                  id="panel1a-header"
+                >
+                  <Typography>{keyHeader}</Typography>
+                </AccordionSummary>
+                <AccordionDetails>
+                  {
+                    simulationData[keyHeader].map((row, i) => {
+                    
+                      return (
+                        <Typography key={i}>
+                         
+                            {row.fieldId} : 
+                         
+                          <input
+                              type="text"
+                              value={row.mockData}
+                              onChange={(e)=>{onChangeText(keyHeader, i, e)}}
+                          />
+                        </Typography>
+                      )
+                    })
+                  }
+  
+                </AccordionDetails>
+              </Accordion>
+            )
+          }
+          
         })
       }
 

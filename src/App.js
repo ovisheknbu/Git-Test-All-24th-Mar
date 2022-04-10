@@ -1,8 +1,12 @@
+import {useState} from 'react'
 import AccordionComp from './Accordion';
 import logo from './logo.svg';
 //import './App.css';
 
 function App() {
+
+
+
   return (
     <div className="container my-5">
       <form>
@@ -26,7 +30,9 @@ function App() {
           </label>
           <input type="password" id="confirm-password" className='form-control'/>
         </div>
+        <button type='submit'>
 
+        </button>
       </form>
       <hr/>
       <AccordionComp/>
