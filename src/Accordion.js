@@ -10,6 +10,7 @@ const AccordionComp = () => {
 
   const [counter, setCounter] = useState({})
 
+const [counter1, setCounter1] = useState({})
   const [simulationData, setSimulationData] = useState({
     //dmId: '1',
     demographic: [
