@@ -4,9 +4,12 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { Label } from '@mui/icons-material';
+import { Label, AbcSharp } from '@mui/icons-material';
 
 const AccordionComp = () => {
+
+  const [counter, setCounter] = useState({})
+
 const [counter1, setCounter1] = useState({})
   const [simulationData, setSimulationData] = useState({
     //dmId: '1',
